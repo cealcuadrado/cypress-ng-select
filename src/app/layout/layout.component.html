@@ -1,1 +1,22 @@
-<p>layout works!</p>
+<div class="row align-items-center">
+  <div class="col-12 col-lg-6">
+    <div class="form-group">
+      <label for="selectCar">Select Car</label>
+      <!--
+      <select [(ngModel)]="selectedCar" id="selectCar" class="form-control">
+        <option *ngFor="let car of cars" [value]="car.id">
+          {{car.name}}
+        </option>
+      </select>
+      -->
+      <ng-select [(ngModel)]="selectedCar" id="selectCar">
+        <ng-option *ngFor="let car of cars" [value]="car.id">
+          {{car.name}}
+        </ng-option>
+      </ng-select>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+    <p>Selected Car: {{selectedCar}}</p>
+  </div>
+</div>
